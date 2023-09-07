@@ -1,0 +1,19 @@
+version: "3"
+services:
+   mysql8:
+      image: mysql:8.0.32
+      environment:
+         - discovery.type=single-node
+         - MYSQL_ROOT_PASSWORD=xmlapi123
+         - TZ=America/Sao_Paulo
+      ports:
+         - 3306:3306
+         - 3600:3600
+      restart: "no"
+      command: --init-file /data/application/init.sql --secure-file-priv=""
+      volumes:
+         - ./init.sql:/data/application/init.sql
+         - mysql8_xmlapi_data:/var/lib/mysql8
+volumes:
+   mysql8_xmlapi_data:
+      external: true

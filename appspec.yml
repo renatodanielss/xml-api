@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /backoffice-api.war
+    destination: /data/apps/
+
+file_exists_behavior: OVERWRITE
+
+hooks:
+  AfterInstall:
+    - location: server_start.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: server_stop.sh
+      timeout: 300
+      runas: root
