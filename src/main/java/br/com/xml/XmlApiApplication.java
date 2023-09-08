@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-	@SpringBootApplication
+@SpringBootApplication
 @EnableConfigurationProperties(XmlApiProperty.class)
 public class XmlApiApplication implements ApplicationContextAware{
 	
