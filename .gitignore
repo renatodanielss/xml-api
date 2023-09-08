@@ -7,7 +7,7 @@
 
 # IntelliJ files
 .idea
-backoffice-api.iml
+xml-api.iml
 
 target
 bin
